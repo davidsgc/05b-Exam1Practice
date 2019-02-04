@@ -200,7 +200,7 @@ def problem1a(m, n):
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement this TEST function.
+    # DONE: 5. Implement this TEST function.
     #   It TESTS the  problem1b  function defined below.
     #   Include at least **   4   ** tests.  Use the usual form:
     #
@@ -225,20 +225,20 @@ def run_test_problem1b():
     print('       actual:  ', actual)
 
     # Test 2
-    expected =
-    actual = problem1b(YYY, YYY)
+    expected = 4
+    actual = problem1b(5, 3)
     print('Test 2 expected:', expected)
     print('       actual:  ', actual)
 
     # Test 3
-    expected = XXX
-    actual = problem1b(YYY, YYY)
+    expected = 6
+    actual = problem1b(6, 4)
     print('Test 3 expected:', expected)
     print('       actual:  ', actual)
 
     # Test 4
-    expected = XXX
-    actual = problem1b(YYY, YYY)
+    expected = 1
+    actual = problem1b(2, 1)
     print('Test 4 expected:', expected)
     print('       actual:  ', actual)
 
@@ -259,7 +259,7 @@ def problem1b(m, f):
            since there are 44 primes between 5 and 200.
      """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     ###########################################################################
@@ -272,6 +272,14 @@ def problem1b(m, f):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 to 15 minutes.
     # -------------------------------------------------------------------------
+    total = 0
+    for k in range((m * f) - m):
+        if is_prime(k + m):
+            total = total + 1
+    if ((m * f) - m)== 0:
+        if is_prime(m):
+            total = total + 1
+    return total
 
 
 def run_test_problem1c():
