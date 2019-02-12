@@ -98,6 +98,20 @@ def run_test_problem3a():
 
     window3.close_on_mouse_click()
 
+    # Window 4:
+    title = 'Problem 3a. Test 5: Start at (30, 50), 20 lines'
+    window4 = rg.RoseWindow(450, 300, title)
+
+    # Test 5 (it is also on window 2):
+    point = rg.Point(30, 50)
+    expected = 11
+    answer = problem3a(window2, point, 6)
+    print()
+    print('Test 5 expected:', expected)
+    print('       actual:  ', answer)
+
+    window4.close_on_mouse_click()
+
     # -------------------------------------------------------------------------
     # TO DO: 2 (continued).
     # Below this comment (or integrated with one of the above tests,
@@ -147,6 +161,8 @@ def problem3a(window, point, n):
     #    TIME ESTIMATE:   20 to 35 minutes.
     # -------------------------------------------------------------------------
 
+    for k in range(n):
+        line = rg.Line(rg.Point(point.x + (20 * k), point.y - (10 * k)))
 
 def run_test_problem3b():
     """ Tests the   problem3b   function. """
