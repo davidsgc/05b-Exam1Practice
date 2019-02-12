@@ -377,7 +377,13 @@ def problem1c(n):
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 20 minutes.
-    # -------------------------------------------------------------------------
+    # ------------------------------------------------------------------------
+    product = 1
+    for k in range(n):
+        if is_prime(k + 1):
+            product = product * (k + 1)
+    sum = sum_of_digits(product)
+    return sum
 
 
 ###############################################################################
