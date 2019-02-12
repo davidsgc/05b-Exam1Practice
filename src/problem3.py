@@ -31,6 +31,35 @@ import rosegraphics as rg
 
 def main():
     """ Calls the   TEST   functions in this module. """
+
+        point1 = rg.Point(point.x + (20 * k), point.y + (10 * k))
+        point2 = rg.Point(point1.x, point1.y + 50)
+        line = rg.Line(point1, point2)
+        if 2 * k <= 12:
+            line.thickness = 1 + (2 * k)
+        else:
+            line.thickness = 13
+        sum = sum + line.thickness
+        line.attach_to(window)
+    window.render()
+    return sum
+
+def run_test_problem3b():
+    """ Tests the   problem3b   function. """
+    # Test 1 is ALREADY DONE (here).
+    expected = 158
+    answer = problem3b(4, rg.Point(100, 50))
+    print()
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 2 is ALREADY DONE (here).
+    expected = 539
+    answer = problem3b(7, rg.Point(30, 30))
+    print()
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+
     run_test_problem3a()
     run_test_problem3b()
 
@@ -160,27 +189,8 @@ def problem3a(window, point, n):
     #    DIFFICULTY:      7 or 8
     #    TIME ESTIMATE:   20 to 35 minutes.
     # -------------------------------------------------------------------------
-
+    sum = 0
     for k in range(n):
-        line = rg.Line(rg.Point(point.x + (20 * k), point.y - (10 * k)))
-
-def run_test_problem3b():
-    """ Tests the   problem3b   function. """
-    # Test 1 is ALREADY DONE (here).
-    expected = 158
-    answer = problem3b(4, rg.Point(100, 50))
-    print()
-    print('Test 1 expected:', expected)
-    print('       actual:  ', answer)
-
-    # Test 2 is ALREADY DONE (here).
-    expected = 539
-    answer = problem3b(7, rg.Point(30, 30))
-    print()
-    print('Test 2 expected:', expected)
-    print('       actual:  ', answer)
-
-
 def problem3b(m, point1):
     """
     See   problem3b_picture.pdf   in this project for pictures
