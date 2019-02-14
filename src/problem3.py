@@ -50,10 +50,6 @@ def run_test_problem3b():
     print('Test 2 expected:', expected)
     print('       actual:  ', answer)
 
-    run_test_problem3a()
-    run_test_problem3b()
-
-
 def run_test_problem3a():
     """ Tests the   problem3a   function. """
     # -------------------------------------------------------------------------
@@ -93,6 +89,14 @@ def run_test_problem3a():
     print('Test 2 expected:', expected)
     print('       actual:  ', answer)
 
+    # Test 5 (it is also on window 2):
+    point = rg.Point(30, 50)
+    expected = 36
+    answer = problem3a(window2, point, 6)
+    print()
+    print('Test 5 expected:', expected)
+    print('       actual:  ', answer)
+
     # Test 3 (it is also on window 2):
     point = rg.Point(30, 50)
     expected = 9
@@ -116,20 +120,6 @@ def run_test_problem3a():
     print('       actual:  ', answer)
 
     window3.close_on_mouse_click()
-
-    # Window 4:
-    title = 'Problem 3a. Test 5: Start at (30, 50), 20 lines'
-    window4 = rg.RoseWindow(450, 300, title)
-
-    # Test 5 (it is also on window 2):
-    point = rg.Point(30, 50)
-    expected = 11
-    answer = problem3a(window2, point, 6)
-    print()
-    print('Test 5 expected:', expected)
-    print('       actual:  ', answer)
-
-    window4.close_on_mouse_click()
 
     # -------------------------------------------------------------------------
     # TO DO: 2 (continued).
@@ -247,7 +237,6 @@ def problem3b(m, point1):
     sum = 0
     for k in range(m):
         sum = sum + problem3a(window, rg.Point(point1.x, point1.y + (60 * k)), 3 + (2 * k))
-    window.render()
     window.close_on_mouse_click()
     return sum
 # -----------------------------------------------------------------------------
